@@ -18,7 +18,7 @@ services:
       # - 2283:2283
       - 80:2283
     depends_on:
-      - immich-redis
+      - redis
       - immich-db
     restart: unless-stopped
 
@@ -38,7 +38,7 @@ services:
   #   healthcheck:
   #     disable: false
 
-  immich-redis:
+  redis:
     container_name: immich_redis
     image: redis:6.2-alpine
     restart: unless-stopped
