@@ -19,7 +19,7 @@ services:
       - 80:2283
     depends_on:
       - redis
-      - immich-db
+      - database
     restart: unless-stopped
 
   # immich-machine-learning:
@@ -43,7 +43,7 @@ services:
     image: redis:6.2-alpine
     restart: unless-stopped
 
-  immich-db:
+  database:
     container_name: immich_postgres
     image: ghcr.io/immich-app/postgres:14-vectorchord0.3.0-pgvectors0.2.0
     environment:
